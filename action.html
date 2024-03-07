@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create or Join Meeting</title>
+    <link rel="stylesheet" href="public/Assets/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="public/Assets/css/style.css">
+</head>
+
+<body style="padding-top: 15rem;">
+    <nav class="navbar navbar-expand-md fixed-top">
+        <img src="public/Assets/images/google-meet-icon.png" class="logo" alt="brand-logo">
+        <a href="#" class="navbar-brand text-dark">RoboAdda</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">At a Glance</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">How It Works</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Membership</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-0">
+                <li class="nav-item sign-in display-center">
+                    <a href="#" class="nav-link">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-secondary btn-lg text-info font-weight-bold join-adda">Join the
+                        Adda</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-lg btn-info text-light font-weight-bold new-adda">Start an Adda</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="jumbotron h-100 d-flex">
+            <div class="container w-40">
+                <h1 style="font-size: 3rem;">Premium Video Meeting.<br> Now its free for Club Members</h1>
+                <p style="font-size: 20px;">
+                    Revolutionizin With Robotics
+                </p>
+                <ul class="display-center justify-content-start">
+                    <li style="padding: 0;">
+                        <button class="btn btn-lg text-light font-weight-bold display-center new-adda"
+                            style="background-color: #01796b;"><span class="material-icons mr-2">video_call</span>New
+                            Adda</button>
+                    </li>
+                    <li class="pl-3">
+                        <button class="btn btn-lg btn-outline-secondary text-dark font-weight-bold display-center"
+                            style="background-color: #ffffff;"><span class="material-icons mr-2">keyboard</span><input
+                                type="text" placeholder="Enter a Code" style="border: none;"
+                                class="enter-code"></button>
+                    </li>
+                    <li class="text-dark font-weight-bold cursor-pointer pl-2 join-action">Join</li>
+                </ul>
+            </div>
+            <div class="container w-50">
+                <img src="public/Assets/images/google-meet-people.jpg" alt="meeting-image" class="signin-image">
+            </div>
+        </div>
+    </main>
+    <footer class="container">
+        <h6>Learn More About <span class="learn-more text-info">RoboAdda</span> .</h6>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $(document).on("click", ".join-adda", function () {
+                $(".enter-code").focus();
+            })
+            $(document).on("click", ".join-action", function () {
+                var join_value = $('.enter-code').val();
+                var meetingUrl = window.location.origin + "?meetingID=" + join_value;
+                window.location.replace(meetingUrl);
+            })
+            $(document).on("click", ".new-adda", function () {
+                var eight_d_value = Math.floor(Math.random() * 100000000);
+                var meetingUrl = window.location.origin + "?meetingID=" + eight_d_value;
+                window.location.replace(meetingUrl);
+            })
+        })
+    </script>
+</body>
+
+</html>
